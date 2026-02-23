@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
+  <style type="text/css">
+  /* Design Credits: Arnav Jain, Nilesh Gupta, Aditya Kusupati, Jon Barron, Deepak Pathak and Saurabh Gupta*/
+  a {
+  color: #1772d0;
+  text-decoration:none;
+  }
+  a:focus, a:hover {
+  color: #f5b461;
+  text-decoration:none;
+  }
+  body,td,th {
+     font-family: 'Source Sans Pro', Arial, sans-serif;
+     font-size: 16px;
+     font-weight: 400
+  }
+  heading {
+     font-family: 'Source Sans Pro', Arial, sans-serif;
+     font-size: 19px;
+     font-weight: 600
+  }
+  strong {
+     font-family: 'Source Sans Pro', Arial, sans-serif;
+     font-size: 16px;
+     font-weight: 800
+  }
+  sectionheading {
+     font-family: 'Source Sans Pro', Arial, sans-serif;
+     font-size: 22px;
+     font-weight: 600
+  }
+  pageheading {
+     font-family: 'Source Sans Pro', Arial, sans-serif;
+     font-size: 36px;
+     font-weight: 400
+  }
+  </style>
+
+  <title>AMD Hackathon - T Karthikeyan</title>
+  <link rel = "icon" href = "../images/IITD.png" type = "image/x-icon">
+  <meta name="T Karthikeyan AMD Hackathon Blog" http-equiv="Content-Type" content="T Karthikeyan AMD Hackathon Blog">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/darkmode.css">
+  <script src="../js/darkmode.js"></script>
+</head>
+
+<body>
+  <!-- Dark mode toggle button -->
+  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
+    <i class="fa fa-moon-o" id="theme-icon"></i>
+  </button>
+<table width="840" border="0" align="center" border="0" cellspacing="0" cellpadding="20">
+<tr><td>
+
+<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+	<p align="center">
+		<pageheading>AMD Reinforcement Learning Hackathon</pageheading><br>
+		<a href="../content/blogs.html">← Back to Blogs</a> | <a href="../index.html">Back to Home</a>
+	</p>
+</table>
+
+<table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+	<tr><td> <sectionheading>&nbsp;&nbsp;Story</sectionheading></td></tr>
+</table>
+
+<table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+  <tr>
+    <td>
+      <p align="justify">
+        Along with my labmates, I participated in a 2-day Reinforcement Learning workshop organized by AMD and Unsloth, which also included a 24-hour hackathon. We chose the AI Premier League track, where the goal was to build two agents: a question agent that could pose genuinely difficult questions, and an answer agent that could reliably tackle such challenging queries. Each team’s question agent would attack the opposing team’s answer agent, and vice versa, with a final tournament deciding the winner.
+      </p>
+      <p align="justify">
+        Our team of four – Aayush Tyagi, Ashish Goswami, Namasivayam K, and myself – sat down early on to chart a possible path to the solution. We started enthusiastically, powered by a massive AMD MI300 GPU (192 GB) and our beloved Copilot (Claude). We tried several approaches; some worked, some failed, and we kept iterating as a team. Time flew, and before we realized it, the clock hit 2 a.m. We were close to finishing dataset curation but still had to implement the GRPO pipeline for the agents. Then came the dark phase, roughly between 3:30 a.m. and 6:30 a.m., where nothing seemed to work. Around 7 a.m., we finally started seeing positive results. After one short sleep cycle, I jumped back to the laptop to continue.
+      </p>
+      <p align="justify">
+        We then simulated a mini tournament with our own agents playing against each other. After multiple trials, we decided to field our SFT and GRPO-tuned Qwen 2.5 14B models for the actual tournament – fingers crossed, but genuinely confident that our agents could hold their own. At the award ceremony, we waited eagerly for the results. To our disappointment, we did not make it through to the podium. Out of 59 teams, we finished in the top 14, which was respectable, but still short of our expectations. We skipped dinner and went straight back to our hostels. Namas and I found ourselves questioning our existence and expertise a bit – after all, we were a team of four senior PhD students.
+      </p>
+      <p align="justify">
+        The disappointment was real, but my optimistic side could not ignore what we had gained. We had become familiar with the complete LLM fine-tuning cycle: from synthetic data curation and model selection to fine-tuning and evaluation. I deeply appreciate that my teammates were willing to pull an all-nighter and push hard toward a shared goal. This hackathon made me realize the true value of a single day – if used well, 24 hours is enough to learn a lot, build something meaningful, and gather experiences that stay with you.
+      </p>
+    </td>
+  </tr>
+</table>
+
+<table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+	<tr><td> <sectionheading>&nbsp;&nbsp;Highlights</sectionheading></td></tr>
+</table>
+
+<!-- Two horizontal photo placeholders -->
+<table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <img src="../images/blogs/amd_hackathon/backside.png" alt="AMD Hackathon Photo 1" width="100%" style="border-radius:10px;">
+      <br>
+      <!-- <font size="2">[Caption for first photo]</font> -->
+    </td>
+    <td width="50%" align="center" valign="top">
+      <img src="../images/blogs/amd_hackathon/side.png" alt="AMD Hackathon Photo 2" width="100%" style="border-radius:10px;">
+      <br>
+      <!-- <font size="2">[Caption for second photo]</font> -->
+    </td>
+  </tr>
+</table>
+
+<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+    <tr>
+      <td>
+        <br>
+        <p align="center"><font size="2">
+        <a href="https://scholar.google.com/citations?user=p-5p_DIAAAAJ" target="_blank">Google Scholar</a> |
+        <a href="mailto:tkarthikeyanai@gmail.com">Email</a> |
+        <a href="https://x.com/TKarthik132" target="_blank">X</a> | 
+        <a href="https://www.linkedin.com/in/t-karthikeyan-926781166/" target="_blank">LinkedIn</a>
+        </font>
+        </p>
+      </td>
+    </tr>
+</table>
+
+</td></tr>
+</table>
+
+</body>
+
+</html>
