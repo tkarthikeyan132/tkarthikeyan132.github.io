@@ -4,50 +4,187 @@
 <head>
   <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
   <style type="text/css">
-  /* Design Credits: Arnav Jain, Nilesh Gupta, Aditya Kusupati, Jon Barron, Deepak Pathak and Saurabh Gupta*/
-  a {
-  color: #1772d0;
-  text-decoration:none;
-  }
-  a:focus, a:hover {
-  color: #f5b461;
-  text-decoration:none;
-  }
-  body,td,th {
-     font-family: 'Source Sans Pro', Arial, sans-serif;
-     font-size: 16px;
-     font-weight: 400
-  }
-  heading {
-     font-family: 'Source Sans Pro', Arial, sans-serif;
-     font-size: 19px;
-     font-weight: 600
-  }
-  strong {
-     font-family: 'Source Sans Pro', Arial, sans-serif;
-     font-size: 16px;
-     font-weight: 800
-  }
-  sectionheading {
-     font-family: 'Source Sans Pro', Arial, sans-serif;
-     font-size: 22px;
-     font-weight: 600
-  }
-  pageheading {
-     font-family: 'Source Sans Pro', Arial, sans-serif;
-     font-size: 48px;
-     font-weight: 400
-  }
+    /* Design Credits: Arnav Jain, Nilesh Gupta, Aditya Kusupati, Jon Barron, Deepak Pathak and Saurabh Gupta*/
+    a {
+      color: #1772d0;
+      text-decoration: none;
+    }
+
+    a:focus,
+    a:hover {
+      color: #f5b461;
+      text-decoration: none;
+    }
+
+    body,
+    td,
+    th {
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 400
+    }
+
+    heading {
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+      font-size: 19px;
+      font-weight: 600
+    }
+
+    subsectionheading {
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-color);
+    }
+
+    strong {
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 800
+    }
+
+    sectionheading {
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+      font-size: 22px;
+      font-weight: 600
+    }
+
+    pageheading {
+      font-family: 'Source Sans Pro', Arial, sans-serif;
+      font-size: 48px;
+      font-weight: 400
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 20px;
+      margin-top: 15px;
+      margin-bottom: 25px;
+    }
+
+    .painting-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 15px;
+      margin-bottom: 25px;
+    }
+
+    .media-card {
+      background-color: rgba(128, 128, 128, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .media-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      background-color: #000;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .play-thumbnail {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: filter 0.2s ease;
+    }
+
+    .play-thumbnail:hover {
+      filter: brightness(1.08);
+    }
+
+    .play-thumbnail:hover .play-icon {
+      transform: scale(1.15);
+      color: #ff0000;
+    }
+
+    .play-icon {
+      font-size: 64px;
+      color: rgba(255, 255, 255, 0.95);
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.7));
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .painting-img {
+      max-height: 380px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .item-list {
+      list-style-type: none;
+      padding-left: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .item-list li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .item-list li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--link-color);
+    }
   </style>
 
   <title>T Karthikeyan - Fun & Favorites</title>
-  <link rel = "icon" href = "../images/IITD.png" type = "image/x-icon">
+  <link rel="icon" href="../images/IITD.png" type="image/x-icon">
   <meta name="T Karthikeyan Fun" http-equiv="Content-Type" content="T Karthikeyan Fun">
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../css/darkmode.css">
   <script src="../js/darkmode.js"></script>
+  <script type="text/javascript">
+    function loadYoutubeIframe(containerId, videoId, title) {
+      const container = document.getElementById(containerId);
+      if (container) {
+        container.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0" title="${title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -55,57 +192,181 @@
   <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode">
     <i class="fa fa-moon-o" id="theme-icon"></i>
   </button>
-<table width="840" border="0" align="center" border="0" cellspacing="0" cellpadding="20">
-<tr><td>
-
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-	<p align="center">
-		<pageheading>Fun & Favorites</pageheading><br>
-		<a href="../index.html">← Back to Home</a>
-	</p>
-</table>
-
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-	<tr><td> <sectionheading>&nbsp;&nbsp;Hobbies</sectionheading></td></tr>
-</table>
-
-To be added soon!
-
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-	<tr><td> <sectionheading>&nbsp;&nbsp;Travel & Experiences</sectionheading></td></tr>
-</table>
-
-To be added soon!
-
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-	<tr><td> <sectionheading>&nbsp;&nbsp;Awesome Movies and Books</sectionheading></td></tr>
-</table>
-
-To be added soon!
-
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
-	<tr><td> <sectionheading>&nbsp;&nbsp;Quotes & Inspiration</sectionheading></td></tr>
-</table>
-
-To be added soon!
-
-<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+  <table width="840" border="0" align="center" cellspacing="0" cellpadding="20">
     <tr>
       <td>
-        <br>
-        <p align="center"><font size="2">
-        <a href="https://scholar.google.com/citations?user=p-5p_DIAAAAJ" target="_blank">Google Scholar</a> |
-        <a href="mailto:tkarthikeyanai@gmail.com">Email</a> |
-        <a href="https://x.com/TKarthik132" target="_blank">X</a> | 
-        <a href="https://www.linkedin.com/in/t-karthikeyan-926781166/" target="_blank">LinkedIn</a>
-        </font>
-        </p>
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <p align="center">
+            <pageheading>Fun & Favorites</pageheading><br>
+            <a href="../index.html">← Back to Home</a>
+          </p>
+        </table>
+
+        <!-- HOBBIES SECTION -->
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+          <tr>
+            <td>
+              <sectionheading>&nbsp;&nbsp;Hobbies</sectionheading>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+          <tr>
+            <td>
+              <!-- Chess -->
+              <subsectionheading>Chess</subsectionheading>
+              <div style="max-width: 350px; margin: 15px auto;">
+                <blockquote class="twitter-tweet" data-width="350"><a
+                    href="https://x.com/TKarthik132/status/2070609737134268612?s=20">Chess.com 1800 Rating Post on X</a>
+                </blockquote>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </div>
+              <br>
+
+              <!-- Paintings -->
+              <subsectionheading>Paintings</subsectionheading>
+              <div class="painting-grid">
+                <div class="media-card">
+                  <img src="../images/fun_and_fav/hobbies/Transformer_Navadhi.jpeg" alt="Navadhi Painting"
+                    class="painting-img">
+                  <p align="center" style="margin-top: 10px; margin-bottom: 0;"><strong>Navadhi</strong></p>
+                </div>
+                <div class="media-card">
+                  <img src="../images/fun_and_fav/hobbies/Messi.jpeg" alt="Messi Painting" class="painting-img">
+                  <p align="center" style="margin-top: 10px; margin-bottom: 0;"><strong>Messi</strong></p>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+        <!-- TRAVEL & EXPERIENCES SECTION -->
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+          <tr>
+            <td>
+              <sectionheading>&nbsp;&nbsp;Travel & Experiences</sectionheading>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+          <tr>
+            <td>
+              <div class="media-grid">
+                <div class="media-card">
+                  <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+                    <a href="https://youtu.be/8Mv2tmibogk" target="_blank" style="font-size: 13px;"><i
+                        class="fa fa-external-link"></i> Watch on YouTube</a>
+                  </div>
+                  <div class="video-container" id="player-8Mv2tmibogk">
+                    <div class="play-thumbnail"
+                      style="background-image: url('https://img.youtube.com/vi/8Mv2tmibogk/hqdefault.jpg');"
+                      onclick="loadYoutubeIframe('player-8Mv2tmibogk', '8Mv2tmibogk', 'Suzhou and Hangzhou, China')">
+                      <i class="fa fa-play-circle play-icon"></i>
+                    </div>
+                  </div>
+                  <p style="margin-top: 10px; margin-bottom: 0;">
+                    <heading>Suzhou and Hangzhou, China</heading>
+                  </p>
+                </div>
+
+                <div class="media-card">
+                  <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+                    <a href="https://youtu.be/ePxT_Vto2b4" target="_blank" style="font-size: 13px;"><i
+                        class="fa fa-external-link"></i> Watch on YouTube</a>
+                  </div>
+                  <div class="video-container" id="player-ePxT_Vto2b4">
+                    <div class="play-thumbnail"
+                      style="background-image: url('https://img.youtube.com/vi/ePxT_Vto2b4/hqdefault.jpg');"
+                      onclick="loadYoutubeIframe('player-ePxT_Vto2b4', 'ePxT_Vto2b4', 'Mumbai: Through a 8 y/o version of me')">
+                      <i class="fa fa-play-circle play-icon"></i>
+                    </div>
+                  </div>
+                  <p style="margin-top: 10px; margin-bottom: 0;">
+                    <heading>Mumbai: Through a 8 y/o version of me</heading>
+                  </p>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+        <!-- BOOKS & MOVIES SECTION -->
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+          <tr>
+            <td>
+              <sectionheading>&nbsp;&nbsp;Awesome Movies and Books</sectionheading>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+          <tr>
+            <td>
+              <subsectionheading>Books</subsectionheading>
+              <ul class="item-list">
+                <li><a href="https://amzn.in/d/04T1zAVW" target="_blank">Bhagavad Gita As It Is</a></li>
+                <li><a href="https://amzn.in/d/01J2KiqS" target="_blank">Fluid: The Approach Applied by Geniuses Over
+                    Centuries</a></li>
+                <li><a href="https://amzn.in/d/05J7rvXU" target="_blank">Ponniyin Selvan</a></li>
+              </ul>
+              <br>
+
+              <subsectionheading>Movies</subsectionheading>
+              <ul class="item-list">
+                <li><a href="https://www.imdb.com/title/tt14392248/" target="_blank">Aspirants</a></li>
+                <li><a href="https://www.imdb.com/title/tt19072562/" target="_blank">Kaala Paani</a></li>
+                <li><a href="https://www.imdb.com/title/tt4849438/" target="_blank">Baahubali</a></li>
+                <li><a href="https://www.imdb.com/title/tt8178634/" target="_blank">RRR</a></li>
+                <li><a href="https://www.imdb.com/title/tt0386676/" target="_blank">The Office</a></li>
+                <li><a href="https://www.imdb.com/title/tt0986264/" target="_blank">Taare Zameen Par</a></li>
+                <li><a href="https://www.imdb.com/title/tt0376127/" target="_blank">Anniyan</a></li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+
+        <!-- QUOTES & INSPIRATION SECTION -->
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+          <tr>
+            <td>
+              <sectionheading>&nbsp;&nbsp;Quotes & Inspiration</sectionheading>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="10">
+          <tr>
+            <td>
+              <ul class="item-list">
+                <li><a href="https://youtu.be/VUoXtddNPAM?si=ctwKoxRh3Ug4o-jB" target="_blank">Little Boxes: Malvina
+                    Reynolds</a></li>
+              </ul>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td>
+              <br>
+              <p align="center">
+                <font size="2">
+                  <a href="https://scholar.google.com/citations?user=p-5p_DIAAAAJ" target="_blank">Google Scholar</a> |
+                  <a href="mailto:tkarthikeyanai@gmail.com">Email</a> |
+                  <a href="https://x.com/TKarthik132" target="_blank">X</a> |
+                  <a href="https://www.linkedin.com/in/t-karthikeyan-926781166/" target="_blank">LinkedIn</a>
+                </font>
+              </p>
+            </td>
+          </tr>
+        </table>
+
       </td>
     </tr>
-</table>
-
-</td></tr>
-</table>
+  </table>
 
 </body>
 
